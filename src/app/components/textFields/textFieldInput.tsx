@@ -23,7 +23,6 @@ export const TextInputField: FC<Prop> = ({
   placeholder = "",
 }) => {
   const { value, handleChange, hasError, errorMessage } = useFormikField(name);
-
   return (
     <TextField
       sx={{
