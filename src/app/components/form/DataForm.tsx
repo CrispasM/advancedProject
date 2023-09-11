@@ -11,7 +11,9 @@ type Prop = {
 }
 
 const schema = Yup.object().shape({
-  name: Yup.string().required().label("Name"),
+  fname: Yup.string().required().label(" First Name"),
+  lname: Yup.string().required().label("Last name"),
+  hospital: Yup.string().required().label("Hospital"),
   village: Yup.string().required().label("Village")
 });
 const DataForm = ({
@@ -21,18 +23,16 @@ const DataForm = ({
 }:Prop) => {
   return (
     <FormikInit
-      initialValues={{name:"",village:""}}
+      initialValues={{ fname: "", lname: "", village: "", hospiatal: "" }}
       validationSchema={schema}
       onSubmit={onSubmit}
       width={width}
       submitButtonText={submitButtonText ? submitButtonText : "submit"}
     >
-      <TextInputField width="100%" name="name" id="name" label="Name" />
-      <TextInputField
-        width="100%"
-        name="village"
-        id="village"
-        label="Village"
+      <TextInputField width="100%" name="fname" id="fname" label="First Name" />
+      <TextInputField width="100%" name="lname" id="lname" label="Last Name" />
+      <TextInputField width="100%" name="hospital" id="hospital" label="Hospital" />
+      <TextInputField width="100%" name="village" id="village" label="Village"
       />
     </FormikInit>
   );

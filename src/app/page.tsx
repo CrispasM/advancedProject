@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import DataFetch from './components/DataFetch'
 import DataForm from './components/form/DataForm'
 import { useAddUser } from './hooks/create/useAddUser'
+import UserTable from './components/table/userTable'
 
 export default function Home() {
   const {mutate,isLoading,isSuccess}= useAddUser();
@@ -16,7 +17,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <DataForm  onSubmit={handleSubmit} />
-      <DataFetch />
+      <UserTable/>
+      {/* <DataFetch /> */}
     </main>
   );
 }

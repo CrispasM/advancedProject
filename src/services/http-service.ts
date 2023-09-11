@@ -10,6 +10,13 @@ export class HttpService<T>{
     this.apiClient = apiClient;
   }
 
+    getAll(query?: string) {
+    return this.apiClient.get<{data: Array<{ id: number; attributes: T}> }>(
+      `${this.endPoint}${"?" + query}`,
+      {}
+    );
+  }
+
     create<P>(entity: Partial<P>){
         console.log("event",entity);
         return this.apiClient.post<T>(
