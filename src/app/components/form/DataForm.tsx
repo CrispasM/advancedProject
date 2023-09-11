@@ -5,7 +5,6 @@ import { TextInputField } from '../textFields/textFieldInput';
 
 
 type Prop = {
-    initialValues: any;
     onSubmit: (values:any)=>void;
     width?: string;
     submitButtonText?: string
@@ -16,7 +15,6 @@ const schema = Yup.object().shape({
   village: Yup.string().required().label("Village")
 });
 const DataForm = ({
-    initialValues,
     onSubmit,
     width ='50%',
     submitButtonText,

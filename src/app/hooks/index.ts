@@ -1,2 +1,2 @@
 export * from "./create/useFormikContext"
-export * from "./create/useFormikField"
+export * from "./useFormikField"
