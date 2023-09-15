@@ -1,12 +1,12 @@
 import { IUser, createUserService } from '@/services/userService';
-import { useQueryClient } from 'react-query';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+
 
 export const useAddUser =()=>{
-    const queryClient = useQueryClient()
-    const addData = (event:IUser)=>
+    const  queryClient = useQueryClient();
+    const addData = (user:IUser)=>
       createUserService()
-        .create(event)
+        .create(user)
         .then((response)=> response.data)
    return useMutation({
     mutationFn: addData,
@@ -17,3 +17,4 @@ export const useAddUser =()=>{
     }
    })
 }
+

@@ -15,7 +15,7 @@ export default function Home() {
     })
   }
   return (
-    <main className={styles.main}>
+    <main>
       <DataForm  onSubmit={handleSubmit} />
       <UserTable/>
       {/* <DataFetch /> */}

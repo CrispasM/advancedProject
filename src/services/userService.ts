@@ -7,7 +7,7 @@ export interface IUser{
 
 class UserService extends HttpService<IUser>{
     constructor(){
-        super("") // /user
+        super("/") // /user
     }
 }
 export const createUserService = () => new UserService()

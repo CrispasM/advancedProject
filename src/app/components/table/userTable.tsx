@@ -19,6 +19,13 @@ const UserTable = () => {
     id,
     }));
 
+    //   const eventsRows = rows?.data
+    //     ? rows.data.map(({ attributes, id }) => ({
+    //         ...attributes,
+    //         id,
+    //       }))
+    //     : [];
+
   return (
     <BaseTable 
         columns={columns} 
